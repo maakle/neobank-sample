@@ -11,34 +11,34 @@ import ProductPresentation from "./components/ProductPresentation";
 import VerifyButton from "@passbase/button/react";
 import Logo from "./components/Logo";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh"
+    height: "100vh",
   },
   paper: {
     margin: theme.spacing(8, 4),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.secondary.main,
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(4)
+    marginTop: theme.spacing(4),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
     height: "40px",
-    backgroundColor: "#000000"
+    backgroundColor: "#000000",
   },
   kycDescription: {
     textAlign: "left",
     marginTop: "20px",
     marginBottom: "20px",
-  }
+  },
 }));
 
 const SignInSide = () => {
@@ -65,21 +65,12 @@ const SignInSide = () => {
             below to continue.
           </Typography>
           <VerifyButton
-            apiKey=
-            {"2b4598cdbb809d8b7a34ba534d76447634ed9a8d58bb498421f72cd8187df048"}
-            onFinished={(error, authKey, additionalAttributes) => {}}
-            integrationType={"signup"}
-            additionalAttributes={{
-              customer_user_id: "SOME_USER_ID"
-            }}
-            prefillAttributes={{
-              email: "",
-              country: "en"
-            }}
-            theme={{
-              accentColor: "",
-              font: "Arial"
-            }}
+            apiKey={
+              "2b4598cdbb809d8b7a34ba534d76447634ed9a8d58bb498421f72cd8187df048"
+            }
+            onFinish={(identityAccessKey) => {}}
+            onError={(errorCode) => {}}
+            onStart={() => {}}
           />
 
           <form className={classes.form} noValidate>
